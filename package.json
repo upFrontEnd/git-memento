@@ -1,0 +1,12 @@
+{
+  "name": "git-memento",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass": "node-sass -w --output-style compressed scss -o css --source-map-root file://${PWD}/ --source-map-embed true"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.0"
+  }
+}
