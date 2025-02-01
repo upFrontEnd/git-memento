@@ -2,3 +2,5 @@
 
 # Git Memento
 Usefull GIT commands
+
+<a href="https://git-memento.netlify.app" target="_blank"><img src="./img/screen.jpg" alt="Project preview"></a>
