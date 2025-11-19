@@ -1,7 +1,4 @@
-// src/scss/style.scss
-@use "mixin" as *;
-@use "reset";
-@use "base";
-@use "typo";
-@use "tab";
-// etc.
+@use 'abstracts';
+@use 'base';
+@use 'layout';
+@use 'components';

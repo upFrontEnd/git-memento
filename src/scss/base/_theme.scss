@@ -1,0 +1,30 @@
+// src/scss/base/_theme.scss
+@use '../abstracts' as *;
+
+// Génère les variables CSS à partir d'une map de thème
+@mixin export-theme-vars($theme-map) {
+  @each $name, $value in $theme-map {
+    --color-#{$name}: #{$value};
+  }
+}
+
+/**
+ * Thème par défaut : light
+ */
+:root {
+  @include export-theme-vars($theme-light);
+}
+
+/**
+ * Thème clair explicite
+ */
+[data-theme='light'] {
+  @include export-theme-vars($theme-light);
+}
+
+/**
+ * Thème sombre
+ */
+[data-theme='dark'] {
+  @include export-theme-vars($theme-dark);
+}

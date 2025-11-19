@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-md;
+  line-height: 1.6;
+  color: var(--color-text, $color-text);
+  background: radial-gradient(circle at top, rgba(0, 159, 227, 0.18), transparent 55%)
+              var(--color-bg, $color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  color: var(--color-text, $color-text);
+}
+
+h1 {
+  font-size: $font-size-2xl;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: $font-size-xl;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: $space-3;
+  color: var(--color-text, $color-text);
+}
+
+.subtitle {
+  margin-bottom: $space-6;
+  font-size: $font-size-md;
+  color: var(--color-text-muted, $color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Code & commandes */
+code,
+.command__code {
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+  background-color: var(--color-code-bg, $color-code-bg);
+  color: var(--color-code, $color-code);
+  padding: $space-1 $space-2;
+  border-radius: $radius-sm;
+}

@@ -1,50 +1,79 @@
-// Credit for copyToCliboard(text) function: https://stackoverflow.com/a/33928558
+import '../scss/style.scss';
 
-// Copies a string to the clipboard. Must be called from within an
-// event handler such as click. May return false if it failed, but
-// this is not always possible. Browser support for Chrome 43+,
-// Firefox 42+, Safari 10+, Edge and IE 10+.
-// IE: The clipboard feature may be disabled by an administrator. By
-// default a prompt is shown the first time the clipboard is
-// used (per session).
+function setupCopyButtons() {
+  const buttons = document.querySelectorAll('.command__btn');
 
-function copyToClipboard(text) {
-  if (window.clipboardData && window.clipboardData.setData) {
-    // IE specific code path to prevent textarea being shown while dialog is visible.
-    return clipboardData.setData('Text', text);
-  } else if (
-    document.queryCommandSupported &&
-    document.queryCommandSupported('copy')
-  ) {
-    var textarea = document.createElement('textarea');
-    textarea.textContent = text;
-    textarea.style.position = 'fixed'; // Prevent scrolling to bottom of page in MS Edge.
-    document.body.appendChild(textarea);
-    textarea.select();
-    try {
-      return document.execCommand('copy'); // Security exception may be thrown by some browsers.
-    } catch (ex) {
-      console.warn('Copy to clipboard failed.', ex);
-      return false;
-    } finally {
-      document.body.removeChild(textarea);
-    }
-  }
-}
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const command = btn.dataset.command;
+      if (!command) return;
 
-var copyBtn = document.getElementsByClassName('toCopy');
+      try {
+        await navigator.clipboard.writeText(command);
 
-for (var i = 0; i < copyBtn.length; i++) {
-  copyBtn[i].addEventListener('click', function(event) {
-    copyToClipboard(this.getAttribute('name'));
+        const label = btn.querySelector('span');
+        const originalText = label?.textContent ?? 'Copier';
 
-    // Indicate last copied item
-    for (var i = 0; i < copyBtn.length; i++) {
-      copyBtn[i].innerHTML = '<i class="fas fa-clipboard"></i>Copier';
-      copyBtn[i].classList.remove('copied');
-    }
-    this.innerHTML = '<i class="fas fa-check"></i>Copier';
+        btn.classList.add('command__btn--copied');
+        if (label) label.textContent = 'Copié !';
 
-    this.classList.add('copied');
+        setTimeout(() => {
+          btn.classList.remove('command__btn--copied');
+          if (label) label.textContent = originalText;
+        }, 1500);
+      } catch (err) {
+        console.error('Erreur lors de la copie :', err);
+      }
+    });
   });
 }
+
+// --- THEME MANAGEMENT --- //
+
+const THEME_KEY = 'git-memento-theme';
+
+function getPreferredTheme() {
+  const stored = localStorage.getItem(THEME_KEY);
+  if (stored === 'light' || stored === 'dark') return stored;
+
+  // fallback : préférences système
+  if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+    return 'dark';
+  }
+  return 'light';
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+}
+
+function setupThemeToggle() {
+  const toggle = document.querySelector('[data-theme-toggle]');
+  if (!toggle) return;
+
+  // init icône / état
+  const current = getPreferredTheme();
+  applyTheme(current);
+  updateToggleIcon(toggle, current);
+
+  toggle.addEventListener('click', () => {
+    const currentTheme =
+      document.documentElement.getAttribute('data-theme') || 'light';
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    applyTheme(nextTheme);
+    localStorage.setItem(THEME_KEY, nextTheme);
+    updateToggleIcon(toggle, nextTheme);
+  });
+}
+
+function updateToggleIcon(toggle, theme) {
+  const icon = toggle.querySelector('.theme-toggle__icon');
+  if (!icon) return;
+  icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupCopyButtons();
+  setupThemeToggle();
+});

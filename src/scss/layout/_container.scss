@@ -1,0 +1,24 @@
+// src/scss/layout/_container.scss
+@use '../abstracts' as *;
+
+.container {
+  max-width: 1120px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: $space-4;
+  padding-block: $space-6;
+  
+  // Pour que le contenu respire un peu plus sur desktop
+  @media (min-width: 1024px) {
+    padding-block: $space-7;
+  }
+}
+
+/* Optionnel : wrapper global si tu veux vraiment centrer verticalement
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+} */
