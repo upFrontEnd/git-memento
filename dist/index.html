@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Git Memento</title>
+  <meta name="description" content="Une sélection de commandes pour Git" />
+
+  <!-- FAVICONS (dans /public/img/...) -->
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/img/favicon/site.webmanifest" />
+  <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!-- Vite injectera le CSS importé par main.js -->
+  <script type="module" crossorigin src="/assets/index-BFW8ZTJ0.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CSHYirpJ.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <img
+        src="img/logo.png"
+        class="header__logo"
+        alt="Logo de Git Memento"
+        width="60"
+        height="67"
+      >
+      <h1 class="header__title">
+        git<span class="header__title-accent">Memento</span>
+      </h1>
+
+		<button
+			class="theme-toggle"
+			type="button"
+			data-theme-toggle
+			aria-label="Basculer le thème clair/sombre">
+			<span class="theme-toggle__icon">🌙</span>
+		</button>
+    </header>
+
+    <p class="subtitle">Une sélection de commandes pour Git</p>
+
+    <main>
+      <!-- SECTION: BRANCHES -->
+      <section class="section" aria-labelledby="section-branches">
+        <div class="section__header">
+          <i class="fas fa-code-branch section__icon" aria-hidden="true"></i>
+          <h2 class="section__title" id="section-branches">Branches</h2>
+        </div>
+
+        <div class="commands">
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Lister les branches locales</p>
+              <code class="command__code">git branch</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git branch">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Créer une branche et switcher dessus</p>
+              <code class="command__code">git checkout -b (nom-branche)</code>
+            </div>
+            <button
+              class="command__btn"
+              type="button"
+              data-command="git checkout -b (nom-branche)"
+            >
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Changer le nom d'une branche</p>
+              <code class="command__code">git branch -m (ancien-nom) (nouveau-nom)</code>
+            </div>
+            <button
+              class="command__btn"
+              type="button"
+              data-command="git branch -m (ancien-nom) (nouveau-nom)"
+            >
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Switcher sur une branche existante</p>
+              <code class="command__code">git checkout (nom-branche)</code>
+            </div>
+            <button
+              class="command__btn"
+              type="button"
+              data-command="git checkout (nom-branche)"
+            >
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Renommer la branche courante</p>
+              <code class="command__code">git branch -m (nouveau-nom)</code>
+            </div>
+            <button
+              class="command__btn"
+              type="button"
+              data-command="git branch -m (nouveau-nom)"
+            >
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Supprimer une branche en local</p>
+              <code class="command__code">git branch -d (nom-branche)</code>
+            </div>
+            <button
+              class="command__btn"
+              type="button"
+              data-command="git branch -d (nom-branche)"
+            >
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: AJOUT -->
+      <section class="section" aria-labelledby="section-ajout">
+        <div class="section__header">
+          <i class="fas fa-plus section__icon" aria-hidden="true"></i>
+          <h2 class="section__title" id="section-ajout">Ajout</h2>
+        </div>
+
+        <div class="commands">
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Ajouter les fichiers au fur et à mesure</p>
+              <code class="command__code">git add -p</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git add -p">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">
+                Ajouter tous les fichiers avec l'extension .html
+              </p>
+              <code class="command__code">git add *.html</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git add *.html">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: LOGS -->
+      <section class="section" aria-labelledby="section-logs">
+        <div class="section__header">
+          <i class="far fa-sticky-note section__icon" aria-hidden="true"></i>
+          <h2 class="section__title" id="section-logs">Logs</h2>
+        </div>
+
+        <div class="commands">
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">
+                Historique des commits sur une seule ligne
+              </p>
+              <code class="command__code">git log --oneline</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git log --oneline">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Historique des 2 derniers commits</p>
+              <code class="command__code">git log -2</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git log -2">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">
+                Historique des 2 derniers commits avec les diff.
+              </p>
+              <code class="command__code">git log -p -2</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git log -p -2">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Toutes les modifications locales</p>
+              <code class="command__code">git diff</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git diff">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Modifications sur un fichier</p>
+              <code class="command__code">git diff (nom fichier)</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git diff (nom fichier)">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: BLAMER -->
+      <section class="section" aria-labelledby="section-blamer">
+        <div class="section__header">
+          <i class="fas fa-bullhorn section__icon" aria-hidden="true"></i>
+          <h2 class="section__title" id="section-blamer">Blamer</h2>
+        </div>
+
+        <div class="commands">
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Obtenir des informations sur un fichier</p>
+              <code class="command__code">git blame (nom du fichier)</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git blame (nom du fichier)">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">
+                Afficher les informations des lignes 10 à 20
+              </p>
+              <code class="command__code">git blame -L 10,20 (nom du fichier)</code>
+            </div>
+            <button
+              class="command__btn"
+              type="button"
+              data-command="git blame -L 10,20 (nom du fichier)"
+            >
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: NETTOYER -->
+      <section class="section" aria-labelledby="section-nettoyer">
+        <div class="section__header">
+          <i class="fas fa-broom section__icon" aria-hidden="true"></i>
+          <h2 class="section__title" id="section-nettoyer">Nettoyer</h2>
+        </div>
+
+        <div class="commands">
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Supprimer tous les fichiers non suivis</p>
+              <code class="command__code">git clean -f</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git clean -f">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">
+                Supprimer tous les fichiers et répertoires non suivis
+              </p>
+              <code class="command__code">git clean -df</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git clean -df">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Annuler toutes les modifications locales</p>
+              <code class="command__code">git checkout -- .</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git checkout -- .">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Retirer un fichier suivi</p>
+              <code class="command__code">git reset HEAD (nom fichier)</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git reset HEAD (nom fichier)">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: STASHES -->
+      <section class="section" aria-labelledby="section-stashes">
+        <div class="section__header">
+          <i class="fas fa-copy section__icon" aria-hidden="true"></i>
+          <h2 class="section__title" id="section-stashes">Stashes</h2>
+        </div>
+
+        <div class="commands">
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Sauvegarder les modifications + message</p>
+              <code class="command__code">git stash save (message) && git stash</code>
+            </div>
+            <button
+              class="command__btn"
+              type="button"
+              data-command="git stash save (message) && git stash"
+            >
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">Liste des stashes</p>
+              <code class="command__code">git stash list</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git stash list">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECTION: AIDE -->
+      <section class="section" aria-labelledby="section-aide">
+        <div class="section__header">
+          <i class="far fa-question-circle section__icon" aria-hidden="true"></i>
+          <h2 class="section__title" id="section-aide">Aide</h2>
+        </div>
+
+        <div class="commands">
+          <article class="command">
+            <div class="command__info">
+              <p class="command__description">
+                Obtenir des informations sur une commande
+              </p>
+              <code class="command__code">git help (commande)</code>
+            </div>
+            <button class="command__btn" type="button" data-command="git help (commande)">
+              <i class="fas fa-clipboard" aria-hidden="true"></i>
+              <span>Copier</span>
+            </button>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+		<!-- GITHUB CORNER -->
+		<a
+		href="https://github.com/adel1982/git-memento"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="github-corner"
+		aria-label="Consultez le code source sur GitHub"
+		>
+		<!-- SVG GitHub corner -->
+		<!-- … -->
+		</a>
+	</body>
+</html>
