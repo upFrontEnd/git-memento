@@ -3,6 +3,6 @@
 # Git Memento
 Usefull GIT commands
 
-<a href="https://git-memento.netlify.app/p" target="_blank">
+<a href="https://git-memento.netlify.app/" target="_blank">
     <img src="./public/img/screen.png" />
 <a>
