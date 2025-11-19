@@ -3,10 +3,10 @@
 
 .container {
   max-width: 1120px;
-  width: 100%;
   margin-inline: auto;
   padding-inline: $space-4;
   padding-block: $space-6;
+  width: 100%;
   
   // Pour que le contenu respire un peu plus sur desktop
   @media (min-width: 1024px) {

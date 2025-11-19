@@ -16,7 +16,8 @@
 
 .command {
   background: var(--color-bg-surface-soft, $color-surface-soft);
-  border-radius: $radius-lg;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-subtle;
   border: 1px solid var(--color-border-subtle, $color-border-subtle);
   padding: $space-4;
   transition:
@@ -24,16 +25,16 @@
     box-shadow 0.2s ease,
     border-color 0.2s ease,
     background-color 0.2s ease;
-  box-shadow: $shadow-subtle;
 
   &:hover {
-    transform: translateY(-2px);
-    border-color: var(--color-primary, $color-primary);
-    box-shadow: $shadow-soft;
     background-color: var(
       --color-bg-surface-soft,
       $color-surface-soft
     ); // on reste sur la même surface, no mix
+    border-color: var(--color-primary, $color-primary);
+    box-shadow: $shadow-soft;
+    transform: translateY(-2px);
+  
   }
 
   &__info {
@@ -46,27 +47,27 @@
   &__description {
     color: var(--color-text, $color-text);
     font-size: $font-size-md;
+    margin: 0;
   }
 
   &__code-wrapper {
-    position: relative;
+    background: var(--color-code-bg, $color-code-bg);
+    border-radius: $radius-md;
+    border-left: 3px solid var(--color-primary, $color-primary);
     display: flex;
     align-items: center;
     gap: $space-2;
-    background: var(--color-code-bg, $color-code-bg);
     padding: $space-2 $space-3;
-    border-radius: $radius-md;
-    border-left: 3px solid var(--color-primary, $color-primary);
+    position: relative;
   }
 
   &__code {
-    flex: 1;
     color: var(--color-code, $color-code);
-    font-size: $font-size-sm;
     display: block;
+    flex: 1;
+    font-size: $font-size-sm;
     overflow-x: auto;
     white-space: nowrap;
-    padding-right: $space-2;
 
     &::-webkit-scrollbar {
       height: 4px;
@@ -89,23 +90,23 @@
 
   &__btn {
     flex-shrink: 0;
+    aspect-ratio: 1;
     background: var(--color-primary, $color-primary);
-    color: #ffffff;
     border: none;
-    padding: $space-2;
-    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+    color: #ffffff;
     cursor: pointer;
     display: inline-flex;
+    padding: $space-2;
+    border-radius: 999px;
     align-items: center;
     justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.25rem; 
     transition:
       transform 0.15s ease,
       background-color 0.15s ease,
       box-shadow 0.15s ease;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
-
+    
     i {
       font-size: 0.95rem;
     }

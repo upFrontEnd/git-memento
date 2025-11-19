@@ -32,8 +32,8 @@
 // Base visuelle d’une carte
 @mixin card-base {
   background: var(--color-bg-surface-soft, $color-surface-soft);
-  border-radius: $radius-lg;
   border: 1px solid var(--color-border-subtle, $color-border-subtle);
+  border-radius: $radius-lg;
   box-shadow: $shadow-subtle;
   transition:
     background-color 0.18s ease,
@@ -45,9 +45,9 @@
 // Effet hover standard
 @mixin card-hover {
   &:hover {
-    transform: translateY(-2px);
     border-color: var(--color-primary, $color-primary);
     box-shadow: $shadow-soft;
+    transform: translateY(-2px);
   }
 }
 
@@ -58,11 +58,10 @@
 @mixin button-reset {
   background: none;
   border: none;
-  padding: 0;
-  margin: 0;
+  color: inherit;
   cursor: pointer;
   font-family: inherit;
-  color: inherit;
+  margin: 0; padding: 0;
 }
 
 // ============================================
