@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   gap: $space-3;
+  margin-bottom: $space-7;
 
   @media (max-width: 640px) {
     flex-wrap: wrap;
