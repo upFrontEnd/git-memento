@@ -5,7 +5,6 @@
   display: flex;
   align-items: center;
   gap: $space-3;
-  margin-bottom: $space-5;
 
   @media (max-width: 640px) {
     flex-wrap: wrap;
@@ -35,6 +34,7 @@
     font-size: 0.8em;
     opacity: 0.9;
   }
+
 }
 
 /* Bouton de switch de thème */

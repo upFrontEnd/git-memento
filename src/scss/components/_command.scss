@@ -1,6 +1,16 @@
 @use 'sass:color';
 @use '../abstracts' as *;
 
+/* Code & commandes */
+code,
+.command__code {
+  background-color: var(--color-code-bg, $color-code-bg);
+  border-radius: $radius-sm;
+  color: var(--color-code, $color-code);
+  font-family: $font-family-mono;
+  font-size: $font-size-sm;
+}
+
 .commands {
   display: grid;
   gap: $space-3;
@@ -20,6 +30,7 @@
   box-shadow: $shadow-subtle;
   border: 1px solid var(--color-border-subtle, $color-border-subtle);
   padding: $space-4;
+  position: relative;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -41,13 +52,13 @@
     display: flex;
     flex-direction: column;
     gap: $space-2;
-    margin-bottom: $space-3;
   }
 
   &__description {
     color: var(--color-text, $color-text);
     font-size: $font-size-md;
     margin: 0;
+    padding-right: 1.5rem;
   }
 
   &__code-wrapper {
@@ -89,16 +100,15 @@
   }
 
   &__btn {
-    flex-shrink: 0;
     aspect-ratio: 1;
     background: var(--color-primary, $color-primary);
     border: none;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+    border-radius: 50px;
     color: #ffffff;
     cursor: pointer;
     display: inline-flex;
     padding: $space-2;
-    border-radius: 999px;
+    position: absolute; top: 0; right: 0;
     align-items: center;
     justify-content: center;
     width: 2.25rem; 
@@ -117,13 +127,9 @@
 
     &:hover {
       background: color.scale($color-primary, $lightness: -10%);
-      transform: translateY(-1px) scale(1.03);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
     }
 
     &:active {
-      transform: translateY(0) scale(0.96);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.18);
     }
 
     &:focus-visible {

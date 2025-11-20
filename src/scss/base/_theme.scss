@@ -1,5 +1,17 @@
-// src/scss/base/_theme.scss
 @use '../abstracts' as *;
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: radial-gradient(circle at top, rgba(0, 159, 227, 0.18), transparent 55%) var(--color-bg, $color-bg);
+  color: var(--color-text, $color-text);
+  font-family: $font-family-base;
+  font-size: $font-size-md;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
 // Génère les variables CSS à partir d'une map de thème
 @mixin export-theme-vars($theme-map) {
