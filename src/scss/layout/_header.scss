@@ -15,49 +15,50 @@
   &__logo {
     flex-shrink: 0;
     padding: $space-1;
-    width: 60px; height: 67px;
+    width: 60px;
+    height: 67px;
   }
 
   &__title {
-    color: var(--color-primary, $color-primary);
+    color: var(--primary, $color-primary);
     display: flex;
     font-size: clamp(1.9rem, 1.6rem + 0.7vw, 2.4rem);
-    font-weight: 650;
-    line-height: 1.1;
     letter-spacing: -0.04em;
     align-items: baseline;
     gap: 0.35rem;
+    position: relative; top: -7px;
   }
 
   &__title-accent {
-    color: var(--color-text, $color-text);
+    color: var(--text, $color-text);
     font-weight: 400;
     font-size: 0.8em;
     opacity: 0.9;
   }
-
 }
 
 /* Bouton de switch de thème */
 .theme-toggle {
   aspect-ratio: 1;
-  background: radial-gradient(circle at top, rgba(0, 159, 227, 0.16),transparent 60%) var(--color-bg-surface, $color-surface);
-  border: 1px solid var(--color-border-subtle, $color-border-subtle);
+  background:
+    radial-gradient(circle at top, rgba(0, 159, 227, 0.16), transparent 60%)
+    var(--bg-surface, $color-surface);
+  border: 1px solid var(--border-subtle, $color-border-subtle);
   border-radius: 999px;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
-  color: var(--color-text-muted, $color-text-muted);
+  color: var(--text-muted, $color-text-muted);
   cursor: pointer;
   margin-left: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0;
+  width: 2.4rem;
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
     background-color 0.18s ease,
     border-color 0.18s ease;
-  width: 2.4rem;
 
   .theme-toggle__icon {
     font-size: 1.1rem;
@@ -66,7 +67,7 @@
   &:hover {
     transform: translateY(-1px);
     box-shadow: 0 14px 30px rgba(15, 23, 42, 0.26);
-    border-color: var(--color-primary-soft, $color-primary-soft);
+    border-color: var(--primary-soft, $color-primary-soft);
   }
 
   &:active {
@@ -75,7 +76,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary, $color-primary);
+    outline: 2px solid var(--primary, $color-primary);
     outline-offset: 2px;
   }
 }

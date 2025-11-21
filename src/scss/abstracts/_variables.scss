@@ -9,14 +9,13 @@ $color-primary-strong: #0077b0;
 
 // Semantic
 $color-success: #22c55e;
-$color-warning: #facc15;
-$color-danger:  #ef4444;
 
 // Neutrals (light base)
 $color-bg: #f5f5f7;
 $color-surface: #ffffff;
 $color-surface-soft: #f9fafb;
 $color-border-subtle: #e5e7eb;
+$spacing: 1rem;
 
 $color-text: #111827;
 $color-text-muted: #6b7280;
@@ -28,6 +27,7 @@ $color-bg-dark: #020617;
 $color-surface-dark: #020617;
 $color-surface-soft-dark: #020617;
 $color-border-subtle-dark: #1f2933;
+$spacing-dark: 0;
 
 $color-text-dark: #e5e7eb;
 $color-text-muted-dark: #9ca3af;
@@ -49,6 +49,7 @@ $space-4: 1rem;
 $space-5: 1.5rem;
 $space-6: 2rem;
 $space-7: 3rem;
+
 
 // Typography
 $font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
@@ -78,8 +79,7 @@ $theme-light: (
   code-bg: $color-code-bg,
   code: $color-code,
   success: $color-success,
-  warning: $color-warning,
-  danger: $color-danger
+  spacing: $spacing
 );
 
 $theme-dark: (
@@ -95,6 +95,5 @@ $theme-dark: (
   code-bg: $color-code-bg-dark,
   code: $color-code,
   success: $color-success,
-  warning: $color-warning,
-  danger: $color-danger
+  spacing: $spacing-dark
 );

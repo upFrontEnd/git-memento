@@ -4,9 +4,9 @@
 /* Code & commandes */
 code,
 .command__code {
-  background-color: var(--color-code-bg, $color-code-bg);
+  background-color: var(--code-bg, $color-code-bg);
   border-radius: $radius-sm;
-  color: var(--color-code, $color-code);
+  color: var(--code, $color-code);
   font-family: $font-family-mono;
   font-size: $font-size-sm;
 }
@@ -25,10 +25,10 @@ code,
 }
 
 .command {
-  background: var(--color-bg-surface-soft, $color-surface-soft);
+  background: var(--bg-surface-soft, $color-surface-soft);
   border-radius: $radius-sm;
   box-shadow: $shadow-subtle;
-  border: 1px solid var(--color-border-subtle, $color-border-subtle);
+  border: 1px solid var(--border-subtle, $color-border-subtle);
   padding: $space-4;
   position: relative;
   transition:
@@ -38,14 +38,10 @@ code,
     background-color 0.2s ease;
 
   &:hover {
-    background-color: var(
-      --color-bg-surface-soft,
-      $color-surface-soft
-    ); // on reste sur la même surface, no mix
-    border-color: var(--color-primary, $color-primary);
+    background-color: var(--bg-surface-soft, $color-surface-soft);
+    border-color: var(--primary, $color-primary);
     box-shadow: $shadow-soft;
     transform: translateY(-2px);
-  
   }
 
   &__info {
@@ -55,16 +51,16 @@ code,
   }
 
   &__description {
-    color: var(--color-text, $color-text);
+    color: var(--text, $color-text);
     font-size: $font-size-md;
     margin: 0;
     padding-right: 1.5rem;
   }
 
   &__code-wrapper {
-    background: var(--color-code-bg, $color-code-bg);
+    background: var(--code-bg, $color-code-bg);
     border-radius: $radius-md;
-    border-left: 3px solid var(--color-primary, $color-primary);
+    border-left: 3px solid var(--primary, $color-primary);
     display: flex;
     align-items: center;
     gap: $space-2;
@@ -73,12 +69,13 @@ code,
   }
 
   &__code {
-    color: var(--color-code, $color-code);
+    color: var(--code, $color-code);
     display: block;
     flex: 1;
     font-size: $font-size-sm;
     overflow-x: auto;
     white-space: nowrap;
+    padding-left: var(--spacing, $spacing);
 
     &::-webkit-scrollbar {
       height: 4px;
@@ -90,7 +87,7 @@ code,
     }
 
     &::-webkit-scrollbar-thumb {
-      background: var(--color-primary, $color-primary);
+      background: var(--primary, $color-primary);
       border-radius: 999px;
 
       &:hover {
@@ -101,44 +98,41 @@ code,
 
   &__btn {
     aspect-ratio: 1;
-    background: var(--color-primary, $color-primary);
+    background: var(--primary, $color-primary);
     border: none;
-    border-radius: 50px;
+    border-radius: $radius-sm;
     color: #ffffff;
     cursor: pointer;
     display: inline-flex;
     padding: $space-2;
-    position: absolute; top: 0; right: 0;
+    position: absolute; top: 4px; right: 4px;
     align-items: center;
     justify-content: center;
-    width: 2.25rem; 
+    width: 2rem;
     transition:
       transform 0.15s ease,
       background-color 0.15s ease,
       box-shadow 0.15s ease;
-    
+
     i {
       font-size: 0.95rem;
     }
 
     span {
-      display: none; // tu peux l’afficher en mobile si tu veux un label
+      display: none;
     }
 
     &:hover {
       background: color.scale($color-primary, $lightness: -10%);
     }
 
-    &:active {
-    }
-
     &:focus-visible {
-      outline: 2px solid var(--color-primary, $color-primary);
+      outline: 2px solid var(--primary, $color-primary);
       outline-offset: 2px;
     }
 
     &--copied {
-      background: var(--color-success, $color-success);
+      background: var(--success, $color-success);
 
       &:hover {
         background: color.scale($color-success, $lightness: -8%);
