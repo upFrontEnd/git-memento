@@ -4,5 +4,5 @@
 Usefull GIT commands
 
 <a href="https://git-memento.netlify.app/" target="_blank">
-    <img src="./public/img/screen.png" />
+    <img src="./public/img/screen.jpg" />
 <a>

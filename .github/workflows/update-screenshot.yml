@@ -1,0 +1,66 @@
+# Nom lisible du workflow dans l'onglet "Actions" de GitHub
+name: Update README screenshot
+
+# Quand est-ce que le workflow se déclenche ?
+on:
+  push:
+    branches: [ main ]      # → à chaque push sur la branche "main"
+  workflow_dispatch: {}      # → déclenchable manuellement depuis l'UI GitHub
+
+jobs:
+  screenshot:                # Nom du job (tu peux l'appeler comme tu veux)
+    runs-on: ubuntu-latest   # Machine virtuelle utilisée par GitHub (Linux Ubuntu)
+
+    # Autorisations pour ce job
+    permissions:
+      contents: write        # On lui permet de pousser des commits dans le repo
+
+    steps:
+      # 1) Récupère le code de ton repo sur la VM GitHub
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2) Installe Bun sur la VM (ton runtime principal)
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      # 3) Installe les dépendances du projet + Playwright Chromium
+      - name: Install dependencies
+        run: |
+          bun install
+          bunx playwright install chromium --with-deps
+
+      # 4) Build ton site (équivalent à "bun run build" en local)
+      - name: Build
+        run: bun run build
+
+      # 5) Lance un serveur de prévisualisation sur http://localhost:3000
+      #    (grâce au script "preview": "vite preview --port 3000 --host 0.0.0.0")
+      - name: Start preview server
+        run: |
+          bun run preview &          # lance le serveur en arrière-plan
+          echo $! > server.pid       # enregistre le PID dans un fichier
+          sleep 10                   # attend 10s que le serveur démarre
+
+      # 6) Appelle ton script de screenshot
+      #    → "screenshot": "node scripts/screenshot.js"
+      - name: Take screenshot
+        run: bun run screenshot      # équivaut à: node scripts/screenshot.js
+
+      # 7) Arrête le serveur de preview
+      - name: Stop server
+        run: kill $(cat server.pid)
+
+      # 8) Commit + push le screenshot s'il a changé
+      - name: Commit updated screenshot
+        run: |
+          git config user.name "github-actions[bot]"                      # auteur du commit
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/img/screen.jpg                                   # ajoute l'image
+          if ! git diff --cached --quiet; then                            # s'il y a des changements...
+            git commit -m "chore: update screenshot"                      # crée un commit
+            git push                                                      # push sur main
+          else
+            echo "No changes in screenshot."                              # sinon, ne fait rien
