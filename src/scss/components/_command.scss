@@ -1,7 +1,6 @@
 @use 'sass:color';
 @use '../abstracts' as *;
 
-/* Code & commandes */
 code,
 .command__code {
   background-color: var(--code-bg, $color-code-bg);
@@ -14,11 +13,9 @@ code,
 .commands {
   display: grid;
   gap: $space-3;
-
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   @media (min-width: 1200px) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -28,20 +25,26 @@ code,
   background: var(--bg-surface-soft, $color-surface-soft);
   border-radius: $radius-sm;
   box-shadow: $shadow-subtle;
-  border: 1px solid var(--border-subtle, $color-border-subtle);
+  outline: 1px solid var(--border-subtle, $color-border-subtle);
   padding: $space-4;
   position: relative;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+  transition: all 0.2s ease;
 
-  &:hover {
+  // Hover normal uniquement si la carte n'est PAS en état "copied"
+  &:hover:not(.command--copied) {
     background-color: var(--bg-surface-soft, $color-surface-soft);
-    border-color: var(--primary, $color-primary);
+    outline-color: var(--primary, $color-primary);
     box-shadow: $shadow-soft;
     transform: translateY(-2px);
+  }
+
+  // État "copied" prioritaire (même en hover)
+  &.command--copied,
+  &.command--copied:hover {
+    outline: 2px solid var(--success, $color-success);
+    box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.45);
+    transform: translateY(0);
+    background-color: var(--bg-surface-soft, $color-surface-soft);
   }
 
   &__info {
@@ -109,35 +112,25 @@ code,
     align-items: center;
     justify-content: center;
     width: 2rem;
-    transition:
-      transform 0.15s ease,
-      background-color 0.15s ease,
-      box-shadow 0.15s ease;
-
+    transition: all 0.15s ease;
     i {
       font-size: 0.95rem;
     }
-
     span {
       display: none;
     }
-
     &:hover {
       background: color.scale($color-primary, $lightness: -10%);
     }
-
     &:focus-visible {
       outline: 2px solid var(--primary, $color-primary);
       outline-offset: 2px;
     }
-
     &--copied {
       background: var(--success, $color-success);
-
       &:hover {
         background: color.scale($color-success, $lightness: -8%);
       }
-
       i::before {
         content: "\f00c"; // icône check Font Awesome
       }

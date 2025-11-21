@@ -1,7 +1,10 @@
 import '../scss/style.scss';
 
 function setupCopyButtons() {
+  const commands = document.querySelectorAll('.command');
   const buttons = document.querySelectorAll('.command__btn');
+
+
 
   buttons.forEach((btn) => {
     btn.addEventListener('click', async () => {
@@ -14,11 +17,17 @@ function setupCopyButtons() {
         const label = btn.querySelector('span');
         const originalText = label?.textContent ?? 'Copier';
 
+        const commandCard = btn.closest('.command');
+
         btn.classList.add('command__btn--copied');
+        commandCard?.classList.add('command--copied');
+
         if (label) label.textContent = 'Copié !';
 
         setTimeout(() => {
           btn.classList.remove('command__btn--copied');
+          commandCard?.classList.remove('command--copied');
+
           if (label) label.textContent = originalText;
         }, 1500);
       } catch (err) {
