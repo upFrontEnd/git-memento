@@ -4,7 +4,7 @@ name: Update README screenshot
 # Quand est-ce que le workflow se déclenche ?
 on:
   push:
-    branches: [ main ]      # → à chaque push sur la branche "main"
+    branches: [ master ]      # → à chaque push sur la branche "main"
   workflow_dispatch: {}      # → déclenchable manuellement depuis l'UI GitHub
 
 jobs:
