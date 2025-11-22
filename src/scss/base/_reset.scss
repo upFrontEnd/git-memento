@@ -27,3 +27,13 @@ img {
 button {
   font: inherit;
 }
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px; padding: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px; height: 1px;
+}
