@@ -86,3 +86,25 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCopyButtons();
   setupThemeToggle();
 });
+
+const sections = document.querySelectorAll('.section');
+
+sections.forEach((section) => {
+  const toggle = section.querySelector('.section__toggle');
+  const content = section.querySelector('.commands');
+
+  if (!toggle || !content) return;
+
+  // État initial : ouvert
+  let isOpen = true;
+
+  toggle.addEventListener('click', () => {
+    isOpen = !isOpen;
+
+    // Toggle classe sur la section
+    section.classList.toggle('section--collapsed', !isOpen);
+
+    // Mise à jour des attributs ARIA
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+});

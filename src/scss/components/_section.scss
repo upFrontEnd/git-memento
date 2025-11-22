@@ -4,27 +4,20 @@
   margin-bottom: $space-4;
 
   &__header {
-    border-bottom: 1px solid var(--border-subtle, $color-border-subtle);
     display: flex;
     align-items: center;
     gap: $space-3;
     margin-bottom: $space-4;
+    border-bottom: 1px solid var(--border-subtle, $color-border-subtle);
     position: relative;
   }
 
   &__header::after {
-    background: linear-gradient(
-      90deg,
-      var(--primary, $color-primary),
-      rgba(0, 159, 227, 0)
-    );
+    background: linear-gradient(90deg,var(--primary, $color-primary),rgba(0, 159, 227, 0));
     border-radius: 999px;
     content: '';
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 72px;
-    height: 2px;
+    position: absolute; left: 0; bottom: -1px;
+    width: 72px; height: 2px;
   }
 
   &__icon {
@@ -42,8 +35,73 @@
 
   &__title {
     color: var(--text, $color-text);
+    flex: 1;
     font-size: clamp(1.25rem, 1.15rem + 0.3vw, 1.5rem);
     font-weight: 600;
     letter-spacing: -0.02em;
   }
+
+  &__toggle {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: $space-1;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted, $color-text-muted);
+    transition: all 0.15s ease;
+
+    &:hover {
+      background-color: rgba(148, 163, 184, 0.15);
+      color: var(--text, $color-text);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--primary, $color-primary);
+      outline-offset: 2px;
+    }
+  }
+
+  &__toggle-icon {
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+  }
+
+  // État "section repliée" : flèche tournée
+  &.section--collapsed .section__toggle-icon {
+    transform: rotate(90deg);
+  }
+
+  // Contenu (les .commands) animé en accordéon
+  .commands {
+    max-height: 2000px; // suffisamment grand pour tout le contenu
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      max-height 0.25s ease,
+      opacity 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  &.section--collapsed .commands {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+// Utilitaire accessibilité (si tu l'utilises pour le texte du bouton)
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
