@@ -30,7 +30,6 @@ code,
   position: relative;
   transition: all 0.2s ease;
 
-  // Hover normal uniquement si la carte n'est PAS en état "copied"
   &:hover:not(.command--copied) {
     background-color: var(--bg-surface-soft, $color-surface-soft);
     outline-color: var(--primary, $color-primary);
@@ -38,7 +37,6 @@ code,
     transform: translateY(-2px);
   }
 
-  // État "copied" prioritaire (même en hover)
   &.command--copied,
   &.command--copied:hover {
     outline: 2px solid var(--success, $color-success);
