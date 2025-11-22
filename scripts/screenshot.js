@@ -1,4 +1,3 @@
-// scripts/screenshot.js
 import { chromium } from "playwright";
 
 const URL = "http://localhost:3000";

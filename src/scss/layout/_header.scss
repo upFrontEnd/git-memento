@@ -40,9 +40,7 @@
 /* Bouton de switch de thème */
 .theme-toggle {
   aspect-ratio: 1;
-  background:
-    radial-gradient(circle at top, rgba(0, 159, 227, 0.16), transparent 60%)
-    var(--bg-surface, $color-surface);
+  background: radial-gradient(circle at top, rgba(0, 159, 227, 0.16), transparent 60%) var(--bg-surface, $color-surface);
   border: 1px solid var(--border-subtle, $color-border-subtle);
   border-radius: 999px;
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);

@@ -42,16 +42,17 @@
   }
 
   &__toggle {
+    aspect-ratio: 1;
+    background-color: rgba(148, 163, 184, 0.15);
     border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: $space-1;
     border-radius: 999px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     color: var(--text-muted, $color-text-muted);
-    transition: all 0.15s ease;
+    cursor: pointer;
+    display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    padding: $space-1;
+    width: 2.4rem;
 
     &:hover {
       background-color: rgba(148, 163, 184, 0.15);
@@ -65,9 +66,15 @@
   }
 
   &__toggle-icon {
-    font-size: 0.9rem;
-    transition: transform 0.2s ease;
+    color: var(--primary, $color-primary);
+    font-size: 1rem;
+    display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     transform-origin: center;
+    transition: all 0.15s ease;
+    
   }
 
   // État "section repliée" : flèche tournée
@@ -80,10 +87,7 @@
     max-height: 2000px; // suffisamment grand pour tout le contenu
     opacity: 1;
     transform: translateY(0);
-    transition:
-      max-height 0.25s ease,
-      opacity 0.2s ease,
-      transform 0.2s ease;
+    transition: all .25s ease;
   }
 
   &.section--collapsed .commands {
