@@ -64,3 +64,4 @@ jobs:
             git push                                                      # push sur main
           else
             echo "No changes in screenshot."                              # sinon, ne fait rien
+          fi
