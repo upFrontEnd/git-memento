@@ -1,0 +1,147 @@
+[
+    {
+      "id": "branches",
+      "title": "Branches",
+      "icon": "fas fa-code-branch",
+      "toggleLabel": "Branches",
+      "commands": [
+        {
+          "description": "Lister les branches locales",
+          "code": "git branch"
+        },
+        {
+          "description": "Créer une branche et switcher dessus",
+          "code": "git checkout -b (nom-branche)"
+        },
+        {
+          "description": "Changer le nom d'une branche",
+          "code": "git branch -m (ancien-nom) (nouveau-nom)"
+        },
+        {
+          "description": "Switcher sur une branche existante",
+          "code": "git checkout (nom-branche)"
+        },
+        {
+          "description": "Renommer la branche courante",
+          "code": "git branch -m (nouveau-nom)"
+        },
+        {
+          "description": "Supprimer une branche en local",
+          "code": "git branch -d (nom-branche)"
+        }
+      ]
+    },
+    {
+      "id": "ajout",
+      "title": "Ajouter",
+      "icon": "fas fa-plus",
+      "toggleLabel": "Ajouter",
+      "commands": [
+        {
+          "description": "Ajouter les fichiers au fur et à mesure",
+          "code": "git add -p"
+        },
+        {
+          "description": "Ajouter tous les fichiers avec l'extension .html",
+          "code": "git add *.html"
+        }
+      ]
+    },
+    {
+      "id": "logs",
+      "title": "Logs",
+      "icon": "far fa-sticky-note",
+      "toggleLabel": "Logs",
+      "commands": [
+        {
+          "description": "Historique des commits sur une seule ligne",
+          "code": "git log --oneline"
+        },
+        {
+          "description": "Historique des 2 derniers commits",
+          "code": "git log -2"
+        },
+        {
+          "description": "Historique des 2 derniers commits avec les diff.",
+          "code": "git log -p -2"
+        },
+        {
+          "description": "Toutes les modifications locales",
+          "code": "git diff"
+        },
+        {
+          "description": "Modifications sur un fichier",
+          "code": "git diff (nom fichier)"
+        }
+      ]
+    },
+    {
+      "id": "blamer",
+      "title": "Blamer",
+      "icon": "fas fa-bullhorn",
+      "toggleLabel": "Blamer",
+      "commands": [
+        {
+          "description": "Obtenir des informations sur un fichier",
+          "code": "git blame (nom du fichier)"
+        },
+        {
+          "description": "Afficher les informations des lignes 10 à 20",
+          "code": "git blame -L 10,20 (nom du fichier)"
+        }
+      ]
+    },
+    {
+      "id": "nettoyer",
+      "title": "Nettoyer",
+      "icon": "fas fa-broom",
+      "toggleLabel": "Nettoyer",
+      "commands": [
+        {
+          "description": "Supprimer tous les fichiers non suivis",
+          "code": "git clean -f"
+        },
+        {
+          "description": "Supprimer tous les fichiers et répertoires non suivis",
+          "code": "git clean -df"
+        },
+        {
+          "description": "Annuler toutes les modifications locales",
+          "code": "git checkout -- ."
+        },
+        {
+          "description": "Retirer un fichier suivi",
+          "code": "git reset HEAD (nom fichier)"
+        }
+      ]
+    },
+    {
+      "id": "stashes",
+      "title": "Stashes",
+      "icon": "fas fa-copy",
+      "toggleLabel": "Stashes",
+      "commands": [
+        {
+          "description": "Sauvegarder les modifications + message",
+          "code": "git stash save (message) && git stash"
+        },
+        {
+          "description": "Liste des stashes",
+          "code": "git stash list"
+        }
+      ]
+    },
+    {
+      "id": "aide",
+      "title": "Aide",
+      "icon": "far fa-question-circle",
+      "toggleLabel": "Aide",
+      "commands": [
+        {
+          "description": "Obtenir des informations sur une commande",
+          "code": "git help (commande)"
+        }
+      ]
+    }
+  ]
+  

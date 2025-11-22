@@ -12,15 +12,16 @@ $color-success: #22c55e;
 
 // Neutrals (light base)
 $color-bg: #f5f5f7;
-$color-surface: #ffffff;
+$color-surface: #fff;
 $color-surface-soft: #f9fafb;
 $color-border-subtle: #c7c7c7;
 $spacing: 1rem;
+$color-logo: $color-primary;
 
 $color-text: #111827;
 $color-text-muted: #6b7280;
 $color-code-bg: #0f172a;
-$color-code: #4fc3f7;
+$color-code: #009fe3;
 
 // Neutrals (dark base)
 $color-bg-dark: #020617;
@@ -28,6 +29,7 @@ $color-surface-dark: #020617;
 $color-surface-soft-dark: #020617;
 $color-border-subtle-dark: #1f2933;
 $spacing-dark: 0;
+$color-logo-dark: #fff;
 
 $color-text-dark: #e5e7eb;
 $color-text-muted-dark: #9ca3af;
@@ -79,7 +81,8 @@ $theme-light: (
   code-bg: $color-code-bg,
   code: $color-code,
   success: $color-success,
-  spacing: $spacing
+  spacing: $spacing,
+  logo: $color-logo
 );
 
 $theme-dark: (
@@ -95,5 +98,6 @@ $theme-dark: (
   code-bg: $color-code-bg-dark,
   code: $color-code,
   success: $color-success,
-  spacing: $spacing-dark
+  spacing: $spacing-dark,
+  logo: $color-logo-dark
 );

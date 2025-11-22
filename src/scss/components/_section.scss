@@ -4,11 +4,11 @@
   margin-bottom: $space-4;
 
   &__header {
-    display: flex;
-    align-items: center;
-    gap: $space-3;
-    margin-bottom: $space-4;
     border-bottom: 1px solid var(--border-subtle, $color-border-subtle);
+    display: flex;
+      align-items: center;
+      gap: $space-3;
+    margin-bottom: $space-4;
     position: relative;
   }
 
@@ -23,13 +23,12 @@
   &__icon {
     aspect-ratio: 1;
     background: rgba(0, 159, 227, 0.12);
-    border-radius: 999px;
+    border-radius: 99px;
     color: var(--primary, $color-primary);
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+      align-items: center;
+      justify-content: center;
     font-size: 1.25rem;
-    flex-shrink: 0;
     width: 2.5rem;
   }
 

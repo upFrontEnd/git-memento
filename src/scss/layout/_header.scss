@@ -1,10 +1,9 @@
-// src/scss/layout/_header.scss
 @use '../abstracts' as *;
 
 .header {
   display: flex;
-  align-items: center;
-  gap: $space-3;
+    align-items: center;
+    gap: $space-3;
   margin-bottom: $space-7;
 
   @media (max-width: 640px) {
@@ -13,19 +12,17 @@
   }
 
   &__logo {
-    flex-shrink: 0;
-    padding: $space-1;
-    width: 60px;
-    height: 67px;
+    fill: var(--logo, $color-logo);
+    width: 60px; height: 60px;
   }
 
   &__title {
     color: var(--primary, $color-primary);
     display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
     font-size: clamp(1.9rem, 1.6rem + 0.7vw, 2.4rem);
     letter-spacing: -0.04em;
-    align-items: baseline;
-    gap: 0.35rem;
     position: relative; top: -7px;
   }
 
@@ -37,7 +34,6 @@
   }
 }
 
-/* Bouton de switch de thème */
 .theme-toggle {
   aspect-ratio: 1;
   background: radial-gradient(circle at top, rgba(0, 159, 227, 0.16), transparent 60%) var(--bg-surface, $color-surface);
@@ -46,13 +42,13 @@
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
   color: var(--text-muted, $color-text-muted);
   cursor: pointer;
-  margin-left: auto;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
+  margin-left: auto;
   padding: 0;
-  width: 2.4rem;
   transition: all 0.18s ease;
+  width: 2.4rem;
 
   .theme-toggle__icon {
     font-size: 1.1rem;

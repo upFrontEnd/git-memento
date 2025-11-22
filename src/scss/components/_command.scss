@@ -12,7 +12,7 @@ code,
 
 .commands {
   display: grid;
-  gap: $space-3;
+    gap: $space-3;
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -63,8 +63,8 @@ code,
     border-radius: $radius-md;
     border-left: 3px solid var(--primary, $color-primary);
     display: flex;
-    align-items: center;
-    gap: $space-2;
+      align-items: center;
+      gap: $space-2;
     padding: $space-2 $space-3;
     position: relative;
   }
@@ -72,9 +72,7 @@ code,
   &__code {
     color: var(--code, $color-code);
     display: block;
-    flex: 1;
     font-size: $font-size-sm;
-    overflow-x: auto;
     padding-left: var(--spacing, $spacing);
 
     &::-webkit-scrollbar {
@@ -103,11 +101,11 @@ code,
     border-radius: $radius-sm;
     color: #ffffff;
     cursor: pointer;
-    display: inline-flex;
+    display: flex;
+      align-items: center;
+      justify-content: center;
     padding: $space-2;
     position: absolute; top: 4px; right: 4px;
-    align-items: center;
-    justify-content: center;
     width: 2rem;
     transition: all 0.15s ease;
     i {
