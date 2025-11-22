@@ -75,7 +75,6 @@ code,
     flex: 1;
     font-size: $font-size-sm;
     overflow-x: auto;
-    white-space: nowrap;
     padding-left: var(--spacing, $spacing);
 
     &::-webkit-scrollbar {

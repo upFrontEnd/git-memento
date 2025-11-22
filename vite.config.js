@@ -9,18 +9,17 @@ export default defineConfig({
     },
   },
   css: {
-    devSourcemap: true, // ✅ Active les sourcemaps en dev
+    devSourcemap: true, 
     preprocessorOptions: {
-      scss: {
-        // Pas d'additionalData si vous importez manuellement
-      },
+      scss: {},
     },
   },
   server: {
     open: true,
     port: 3000,
+    host: '0.0.0.0',
   },
   build: {
-    sourcemap: true, // ✅ Active les sourcemaps en production aussi (optionnel)
+    sourcemap: true, 
   },
 });
