@@ -56,6 +56,10 @@ code, .command__code {
     margin: 0;
     padding-right: 1.5rem;
   }
+  &.command--copied .command__code {
+    color: var(--success, $color-success);
+  }
+
 
   &__code-wrapper {
     background: var(--code-bg, $color-code-bg);
@@ -73,25 +77,8 @@ code, .command__code {
     display: block;
     font-size: $font-size-sm;
     padding-left: var(--spacing, $spacing);
-
-    &::-webkit-scrollbar {
-      height: 4px;
-    }
-
-    &::-webkit-scrollbar-track {
-      background: rgba(148, 163, 184, 0.15);
-      border-radius: 999px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: var(--primary, $color-primary);
-      border-radius: 999px;
-
-      &:hover {
-        background: color.scale($color-primary, $lightness: -10%);
-      }
-    }
   }
+ 
 
   &__btn {
     aspect-ratio: 1;
