@@ -1,8 +1,7 @@
 @use 'sass:color';
 @use '../abstracts' as *;
 
-code,
-.command__code {
+code, .command__code {
   background-color: var(--code-bg, $color-code-bg);
   border-radius: $radius-sm;
   color: var(--code, $color-code);
