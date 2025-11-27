@@ -38,12 +38,24 @@
       "toggleLabel": "Ajouter",
       "commands": [
         {
+          "description": "Crée un commit avec message",
+          "code": "git commit -m 'message'"
+        },
+        {
           "description": "Ajouter les fichiers au fur et à mesure",
           "code": "git add -p"
         },
         {
           "description": "Ajouter tous les fichiers avec l'extension .html",
           "code": "git add *.html"
+        },
+        {
+          "description": "Modifie le dernier commit (message et/ou contenu).",
+          "code": "git commit --amend"
+        },
+        {
+          "description": "Modifie le dernier commit (message et/ou contenu).",
+          "code": "git commit --amend --no-edit"
         }
       ]
     },

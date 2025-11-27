@@ -31,7 +31,7 @@ code {
   box-shadow: $shadow-subtle;
   display: flex;           // ✅ permet de "pousser" le code en bas
     flex-direction: column;
-  height: 100%;            // ✅ remplit la cellule grid
+  height: 7rem;            // ✅ remplit la cellule grid
   padding: $space-4;
   position: relative;
   transition: all 0.18s ease;
@@ -75,7 +75,7 @@ code {
     font-family: $font-family-mono;
     font-size: $font-size-sm;
     line-height: 1.25;
-    padding: $space-1 $space-3;
+    padding: $space-1 $space-2;
     padding-left: var(--spacing, $spacing);   // ✅ varie selon le thème via CSS var
     white-space: normal;                      // ✅ wrap si long
     width: 100%;
