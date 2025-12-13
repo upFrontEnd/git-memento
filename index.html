@@ -1,41 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Git Memento</title>
   <meta name="description" content="Une sélection de commandes pour Git" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
   <link rel="manifest" href="/img/favicon/site.webmanifest" />
   <link rel="mask-icon" href="/img/favicon/safari-pinned-tab.svg" color="#5bbad5" />
   <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script type="module" src="/src/js/main.js" defer></script>
+
+  <!-- Perf: accélère le handshake vers le CDN (utile si tu gardes Font Awesome) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <script type="module" src="/src/js/main.js"></script>
 </head>
 
 <body>
+  <!-- A11Y: lien d’évitement (à styliser en “visually hidden” puis visible au focus) -->
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
+
   <div class="container">
     <header class="header">
-      <svg xmlns="http://www.w3.org/2000/svg" class="header__logo" viewBox="0 0 313 301">
+      <!-- Si le logo est purement décoratif (déjà redondant avec le titre),
+           le masquer aux lecteurs d’écran évite du bruit. -->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="header__logo"
+        viewBox="0 0 313 301"
+        aria-hidden="true"
+        focusable="false"
+      >
         <path d="m255.54 76.94-85.13-44.55c-8.64-4.52-19.18-4.52-27.82 0l-32.58 17.05c9.96 9.85 26.2 25.75 42.57 41.74 1.25-.34 2.56-.54 3.92-.54 8.12 0 14.69 6.58 14.69 14.69 0 1.23-.17 2.42-.45 3.57 11.31 11.02 21.45 20.9 28.07 27.35 1.13-.28 2.31-.44 3.52-.44 8.12 0 14.69 6.58 14.69 14.69s-6.58 14.69-14.69 14.69-14.69-6.58-14.69-14.69c0-1.19.16-2.35.43-3.46l-.43.07-22.2-21.76-1.04 58.27c4.08 2.61 6.8 7.17 6.8 12.38 0 8.12-6.58 14.69-14.69 14.69s-14.69-6.58-14.69-14.69c0-4.99 2.5-9.4 6.31-12.06v-66.56c-3.81-2.66-6.31-7.06-6.31-12.06 0-.98.1-1.94.28-2.86L95.66 56.95 57.47 76.93c-8.94 4.68-14.46 13.47-14.46 23.01v101.11c0 9.54 5.53 18.33 14.46 23.01l85.12 44.55c8.64 4.52 19.18 4.52 27.82 0l85.13-44.55c8.93-4.68 14.46-13.47 14.46-23.01V99.94c0-9.54-5.53-18.33-14.46-23.01Z"/>
       </svg>
-      
+
       <h1 class="header__title">
         git<span class="header__title-accent">Memento</span>
       </h1>
 
+      <!-- A11Y: aria-pressed reflète l’état du toggle (à gérer en JS).
+           aria-label ok, mais un aria-pressed apporte une info “on/off”. -->
       <button
         class="theme-toggle"
         type="button"
         data-theme-toggle
-        aria-label="Basculer le thème clair/sombre">
-        <span class="theme-toggle__icon">🌙</span>
+        aria-label="Basculer le thème clair/sombre"
+        aria-pressed="false"
+      >
+        <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+        <span class="visually-hidden">Changer le thème</span>
       </button>
     </header>
-    <main></main>
+
+    <!-- A11Y: cible du skip-link + focus programmatique possible -->
+    <main id="main-content" tabindex="-1"></main>
   </div>
 </body>
 </html>

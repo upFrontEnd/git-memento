@@ -1,38 +1,81 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 html {
   font-size: 16px;
+
+  /* Permet aux contrôles natifs (inputs, scrollbars) de suivre le thème */
+  color-scheme: light dark;
 }
 
 body {
-  background: radial-gradient(circle at top, rgba(0, 159, 227, 0.18), transparent 55%) var(--bg, $color-bg) no-repeat;
-  color: var(--text, $color-text);
-  font-family: $font-family-base;
-  font-size: $font-size-md;
   margin: 0;
   min-height: 100vh;
+
+  font-family: $font-family-base;
+  font-size: $font-size-md;
   -webkit-font-smoothing: antialiased;
+
+  color: var(--text, $color-text);
+
+  /* Perf: on fixe un fond de base + on superpose un gradient.
+     (Moins de recalculs que “gradient + var() + no-repeat” dans une seule shorthand) */
+  background-color: var(--bg, $color-bg);
+  background-image: radial-gradient(
+    circle at top,
+    rgba(0, 159, 227, 0.18),
+    transparent 55%
+  );
+  background-repeat: no-repeat;
 }
 
-// Génère les variables CSS à partir d'une map de thème
-// Exemple : (bg: #fff, text: #000) -> --bg: #fff; --text: #000;
+/* Map Sass -> CSS vars */
 @mixin export-theme-vars($theme-map) {
   @each $name, $value in $theme-map {
     --#{$name}: #{$value};
   }
 }
 
-/** Thème par défaut : light **/
+/* 1) Base: variables light par défaut */
 :root {
   @include export-theme-vars($theme-light);
 }
 
-/** Thème clair explicite **/
-[data-theme='light'] {
+/* 2) Si l’utilisateur n’a PAS choisi explicitement de thème,
+      on respecte la préférence OS. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    @include export-theme-vars($theme-dark);
+  }
+}
+
+/* 3) Choix explicite (via JS) : prioritaire sur le système */
+html[data-theme="light"] {
   @include export-theme-vars($theme-light);
 }
 
-/** Thème sombre **/
-[data-theme='dark'] {
+html[data-theme="dark"] {
   @include export-theme-vars($theme-dark);
+}
+
+/* A11Y: focus visible cohérent (si tu as une variable --focus, utilise-la) */
+:focus-visible {
+  outline: 2px solid var(--focus, currentColor);
+  outline-offset: 3px;
+}
+
+/* A11Y: skip-link (si tu l’as ajouté dans le HTML) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg, $color-bg);
+  color: var(--text, $color-text);
+  border-radius: 0.5rem;
+  z-index: 9999;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
 }
