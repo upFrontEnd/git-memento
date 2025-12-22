@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Git Memento</title>
+  <title>Git Memento – Cheat sheet des commandes Git essentielles</title>
   <meta name="description" content="Mémo Git clair et rapide : commandes essentielles, workflows, branches, rebase, stash, tags, undo, et bonnes pratiques. Format cheat sheet." />
 
   <meta property="og:type" content="website" />
@@ -12,13 +12,18 @@
   <meta property="og:title" content="Git Memento – Cheat sheet des commandes Git essentielles" />
   <meta property="og:description" content="Mémo Git clair et rapide : commandes essentielles, workflows, branches, rebase, stash, tags, undo, et bonnes pratiques." />
   <meta property="og:url" content="https://git-memento.netlify.app/" />
-  <meta property="og:image" content="https://git-memento.netlify.app/img/favicon/apple-touch-icon.png" />
+  <meta property="og:image" content="https://git-memento.netlify.app/img/og/git-memento-1200x630.png" />
+  <meta property="og:image:secure_url" content="https://git-memento.netlify.app/img/og/git-memento-1200x630.png" />
   <meta property="og:image:alt" content="Git Memento – Cheat sheet Git" />
-
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
+  
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Git Memento – Cheat sheet des commandes Git essentielles" />
-  <meta name="twitter:description" content="Mémo Git clair et rapide : commandes essentielles, workflows, branches, rebase, stash, tags, undo, et bonnes pratiques." />
-  <meta name="twitter:image" content="https://www.example.com/img/og/git-memento.png" />
+  <meta name="twitter:image" content="https://git-memento.netlify.app/img/og/git-memento-1200x630.png" />
+  <meta name="twitter:image:alt" content="Git Memento – Cheat sheet Git" />
+  <meta name="twitter:url" content="https://git-memento.netlify.app/" />
+  <meta name="twitter:domain" content="git-memento.netlify.app" />
 
 
   <meta name="color-scheme" content="light dark" />
@@ -43,7 +48,7 @@
     referrerpolicy="no-referrer"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
   />
-  <script type="module" crossorigin src="/assets/index-DXMDarx7.js"></script>
+  <script type="module" crossorigin src="/assets/index-BF5pBY_f.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-lNoneiD_.css">
 </head>
 
@@ -77,23 +82,38 @@
         <span class="visually-hidden">Changer le thème</span>
       </button>
     </header>
-    
-    <main id="main-content" tabindex="-1"></main>
+    <main id="main-content" tabindex="-1">
+      <div id="app"><section class="section" aria-labelledby="section-branches"><div class="section__header"><i class="fas fa-code-branch section__icon" aria-hidden="true"></i><h2 class="section__title" id="section-branches">Branches</h2><button class="section__toggle" type="button" aria-expanded="true" aria-controls="section-branches-content"><span class="visually-hidden">Afficher / masquer la section Branches</span><i class="fas fa-chevron-down section__toggle-icon" aria-hidden="true"></i></button></div><div class="commands" id="section-branches-content"><article class="command"><div class="command__info"><p class="command__description">Lister les branches locales</p><code class="command__code">git branch</code></div><button class="command__btn" type="button" data-command="git branch" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Créer une branche et switcher dessus</p><code class="command__code">git checkout -b (nom-branche)</code></div><button class="command__btn" type="button" data-command="git checkout -b (nom-branche)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Changer le nom d'une branche</p><code class="command__code">git branch -m (ancien-nom) (nouveau-nom)</code></div><button class="command__btn" type="button" data-command="git branch -m (ancien-nom) (nouveau-nom)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Switcher sur une branche existante</p><code class="command__code">git checkout (nom-branche)</code></div><button class="command__btn" type="button" data-command="git checkout (nom-branche)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Renommer la branche courante</p><code class="command__code">git branch -m (nouveau-nom)</code></div><button class="command__btn" type="button" data-command="git branch -m (nouveau-nom)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Supprimer une branche en local</p><code class="command__code">git branch -d (nom-branche)</code></div><button class="command__btn" type="button" data-command="git branch -d (nom-branche)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article></div></section><section class="section" aria-labelledby="section-ajout"><div class="section__header"><i class="fas fa-plus section__icon" aria-hidden="true"></i><h2 class="section__title" id="section-ajout">Ajouter</h2><button class="section__toggle" type="button" aria-expanded="true" aria-controls="section-ajout-content"><span class="visually-hidden">Afficher / masquer la section Ajouter</span><i class="fas fa-chevron-down section__toggle-icon" aria-hidden="true"></i></button></div><div class="commands" id="section-ajout-content"><article class="command"><div class="command__info"><p class="command__description">Crée un commit avec message</p><code class="command__code">git commit -m 'message'</code></div><button class="command__btn" type="button" data-command="git commit -m 'message'" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Ajouter les fichiers au fur et à mesure</p><code class="command__code">git add -p</code></div><button class="command__btn" type="button" data-command="git add -p" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Ajouter tous les fichiers avec l'extension .html</p><code class="command__code">git add *.html</code></div><button class="command__btn" type="button" data-command="git add *.html" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Modifie le dernier commit (message et/ou contenu).</p><code class="command__code">git commit --amend</code></div><button class="command__btn" type="button" data-command="git commit --amend" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Modifie le dernier commit (message et/ou contenu).</p><code class="command__code">git commit --amend --no-edit</code></div><button class="command__btn" type="button" data-command="git commit --amend --no-edit" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article></div></section><section class="section" aria-labelledby="section-logs"><div class="section__header"><i class="far fa-sticky-note section__icon" aria-hidden="true"></i><h2 class="section__title" id="section-logs">Logs</h2><button class="section__toggle" type="button" aria-expanded="true" aria-controls="section-logs-content"><span class="visually-hidden">Afficher / masquer la section Logs</span><i class="fas fa-chevron-down section__toggle-icon" aria-hidden="true"></i></button></div><div class="commands" id="section-logs-content"><article class="command"><div class="command__info"><p class="command__description">Historique des commits sur une seule ligne</p><code class="command__code">git log --oneline</code></div><button class="command__btn" type="button" data-command="git log --oneline" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Historique des 2 derniers commits</p><code class="command__code">git log -2</code></div><button class="command__btn" type="button" data-command="git log -2" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Historique des 2 derniers commits avec les diff.</p><code class="command__code">git log -p -2</code></div><button class="command__btn" type="button" data-command="git log -p -2" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Toutes les modifications locales</p><code class="command__code">git diff</code></div><button class="command__btn" type="button" data-command="git diff" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Modifications sur un fichier</p><code class="command__code">git diff (nom fichier)</code></div><button class="command__btn" type="button" data-command="git diff (nom fichier)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article></div></section><section class="section" aria-labelledby="section-blamer"><div class="section__header"><i class="fas fa-bullhorn section__icon" aria-hidden="true"></i><h2 class="section__title" id="section-blamer">Blamer</h2><button class="section__toggle" type="button" aria-expanded="true" aria-controls="section-blamer-content"><span class="visually-hidden">Afficher / masquer la section Blamer</span><i class="fas fa-chevron-down section__toggle-icon" aria-hidden="true"></i></button></div><div class="commands" id="section-blamer-content"><article class="command"><div class="command__info"><p class="command__description">Obtenir des informations sur un fichier</p><code class="command__code">git blame (nom du fichier)</code></div><button class="command__btn" type="button" data-command="git blame (nom du fichier)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Afficher les informations des lignes 10 à 20</p><code class="command__code">git blame -L 10,20 (nom du fichier)</code></div><button class="command__btn" type="button" data-command="git blame -L 10,20 (nom du fichier)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article></div></section><section class="section" aria-labelledby="section-nettoyer"><div class="section__header"><i class="fas fa-broom section__icon" aria-hidden="true"></i><h2 class="section__title" id="section-nettoyer">Nettoyer</h2><button class="section__toggle" type="button" aria-expanded="true" aria-controls="section-nettoyer-content"><span class="visually-hidden">Afficher / masquer la section Nettoyer</span><i class="fas fa-chevron-down section__toggle-icon" aria-hidden="true"></i></button></div><div class="commands" id="section-nettoyer-content"><article class="command"><div class="command__info"><p class="command__description">Supprimer tous les fichiers non suivis</p><code class="command__code">git clean -f</code></div><button class="command__btn" type="button" data-command="git clean -f" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Supprimer tous les fichiers et répertoires non suivis</p><code class="command__code">git clean -df</code></div><button class="command__btn" type="button" data-command="git clean -df" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Annuler toutes les modifications locales</p><code class="command__code">git checkout -- .</code></div><button class="command__btn" type="button" data-command="git checkout -- ." aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Retirer un fichier suivi</p><code class="command__code">git reset HEAD (nom fichier)</code></div><button class="command__btn" type="button" data-command="git reset HEAD (nom fichier)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article></div></section><section class="section" aria-labelledby="section-stashes"><div class="section__header"><i class="fas fa-copy section__icon" aria-hidden="true"></i><h2 class="section__title" id="section-stashes">Stashes</h2><button class="section__toggle" type="button" aria-expanded="true" aria-controls="section-stashes-content"><span class="visually-hidden">Afficher / masquer la section Stashes</span><i class="fas fa-chevron-down section__toggle-icon" aria-hidden="true"></i></button></div><div class="commands" id="section-stashes-content"><article class="command"><div class="command__info"><p class="command__description">Sauvegarder les modifications + message</p><code class="command__code">git stash save (message) &amp;&amp; git stash</code></div><button class="command__btn" type="button" data-command="git stash save (message) &amp;&amp; git stash" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article><article class="command"><div class="command__info"><p class="command__description">Liste des stashes</p><code class="command__code">git stash list</code></div><button class="command__btn" type="button" data-command="git stash list" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article></div></section><section class="section" aria-labelledby="section-aide"><div class="section__header"><i class="far fa-question-circle section__icon" aria-hidden="true"></i><h2 class="section__title" id="section-aide">Aide</h2><button class="section__toggle" type="button" aria-expanded="true" aria-controls="section-aide-content"><span class="visually-hidden">Afficher / masquer la section Aide</span><i class="fas fa-chevron-down section__toggle-icon" aria-hidden="true"></i></button></div><div class="commands" id="section-aide-content"><article class="command"><div class="command__info"><p class="command__description">Obtenir des informations sur une commande</p><code class="command__code">git help (commande)</code></div><button class="command__btn" type="button" data-command="git help (commande)" aria-label="Copier la commande Git."><i class="fas fa-clipboard" aria-hidden="true"></i><span>Copier</span></button></article></div></section></div>
+    </main>
   </div>
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://git-memento.netlify.app/#website",
+      "name": "Git Memento",
+      "url": "https://git-memento.netlify.app/",
+      "inLanguage": "fr"
+    },
+    {
       "@type": "WebPage",
+      "@id": "https://git-memento.netlify.app/#webpage",
+      "url": "https://git-memento.netlify.app/",
       "name": "Git Memento – Cheat sheet des commandes Git essentielles",
       "description": "Mémo Git clair et rapide : commandes essentielles, workflows, branches, rebase, stash, tags, undo, et bonnes pratiques.",
       "inLanguage": "fr",
-      "url": "https://git-memento.netlify.app/",
-      "isPartOf": {
-        "@type": "WebSite",
-        "name": "Git Memento",
-        "url": "https://git-memento.netlify.app/"
+      "isPartOf": { "@id": "https://git-memento.netlify.app/#website" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://git-memento.netlify.app/img/og/git-memento-1200x630.png",
+        "width": 1200,
+        "height": 630
       }
     }
-    </script>
+  ]
+}
+</script>
 </body>
 </html>

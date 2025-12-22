@@ -6,11 +6,12 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "bunx vite build && bun scripts/prerender.mjs",
     "preview": "vite preview --port 3000 --host 0.0.0.0",
     "screenshot": "node scripts/screenshot.js"
   },
   "devDependencies": {
+    "happy-dom": "^20.0.11",
     "playwright": "^1.56.1"
   }
 }

@@ -1,15 +1,17 @@
-import sectionsData from '../data/commands.json';
-
 /**
- * Génère dynamiquement toutes les sections dans <main>
- * en se basant sur le JSON.
+ * Génère dynamiquement toutes les sections dans le conteneur fourni
+ * (par défaut #app), en se basant sur le JSON fourni.
  */
-export function renderSections() {
-  const main = document.querySelector('main');
-  if (!main) return;
+export function renderSections(container, sectionsData) {
+  const target = container ?? document.querySelector('#app');
+  if (!target) return;
 
-  // On nettoie le contenu existant de <main> (au cas où)
-  main.innerHTML = '';
+  if (!Array.isArray(sectionsData)) {
+    throw new Error('renderSections: sectionsData doit être un tableau (JSON).');
+  }
+
+  // On nettoie le contenu existant du conteneur (au cas où)
+  target.innerHTML = '';
 
   sectionsData.forEach((section) => {
     const sectionEl = document.createElement('section');
@@ -95,6 +97,6 @@ export function renderSections() {
 
     sectionEl.appendChild(header);
     sectionEl.appendChild(commandsWrapper);
-    main.appendChild(sectionEl);
+    target.appendChild(sectionEl);
   });
 }

@@ -81,37 +81,38 @@
         <span class="visually-hidden">Changer le thème</span>
       </button>
     </header>
-    
-    <main id="main-content" tabindex="-1"></main>
+    <main id="main-content" tabindex="-1">
+      <div id="app"><!--app-html--></div>
+    </main>
   </div>
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://git-memento.netlify.app/#website",
-          "name": "Git Memento",
-          "url": "https://git-memento.netlify.app/",
-          "inLanguage": "fr"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://git-memento.netlify.app/#webpage",
-          "url": "https://git-memento.netlify.app/",
-          "name": "Git Memento – Cheat sheet des commandes Git essentielles",
-          "description": "Mémo Git clair et rapide : commandes essentielles, workflows, branches, rebase, stash, tags, undo, et bonnes pratiques.",
-          "inLanguage": "fr",
-          "isPartOf": { "@id": "https://git-memento.netlify.app/#website" },
-          "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://git-memento.netlify.app/img/og/git-memento-1200x630.png",
-            "width": 1200,
-            "height": 630
-          }
-        }
-      ]
+      "@type": "WebSite",
+      "@id": "https://git-memento.netlify.app/#website",
+      "name": "Git Memento",
+      "url": "https://git-memento.netlify.app/",
+      "inLanguage": "fr"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://git-memento.netlify.app/#webpage",
+      "url": "https://git-memento.netlify.app/",
+      "name": "Git Memento – Cheat sheet des commandes Git essentielles",
+      "description": "Mémo Git clair et rapide : commandes essentielles, workflows, branches, rebase, stash, tags, undo, et bonnes pratiques.",
+      "inLanguage": "fr",
+      "isPartOf": { "@id": "https://git-memento.netlify.app/#website" },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://git-memento.netlify.app/img/og/git-memento-1200x630.png",
+        "width": 1200,
+        "height": 630
+      }
     }
-    </script>
+  ]
+}
+</script>
 </body>
 </html>
