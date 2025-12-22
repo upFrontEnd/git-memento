@@ -16,12 +16,14 @@ export function setupCopyButtons() {
   
           btn.classList.add('command__btn--copied');
           commandCard?.classList.add('command--copied');
+          btn.setAttribute('aria-label', 'La commande a été copiée.');
   
           if (label) label.textContent = 'Copié !';
   
           setTimeout(() => {
             btn.classList.remove('command__btn--copied');
             commandCard?.classList.remove('command--copied');
+            btn.setAttribute('aria-label', 'Copier la commande Git.');
   
             if (label) label.textContent = originalText;
           }, 1500);

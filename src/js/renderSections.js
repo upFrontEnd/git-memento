@@ -16,7 +16,7 @@ export function renderSections() {
     sectionEl.className = 'section';
     sectionEl.setAttribute('aria-labelledby', `section-${section.id}`);
 
-    // ----- Header -----
+    // ----- Header ----- //
     const header = document.createElement('div');
     header.className = 'section__header';
 
@@ -49,7 +49,7 @@ export function renderSections() {
 
     header.appendChild(toggle);
 
-    // ----- Liste des commandes -----
+    // ----- Liste des commandes ----- //
     const commandsWrapper = document.createElement('div');
     commandsWrapper.className = 'commands';
     commandsWrapper.id = `section-${section.id}-content`;
@@ -77,6 +77,7 @@ export function renderSections() {
       btn.className = 'command__btn';
       btn.type = 'button';
       btn.dataset.command = cmd.code;
+      btn.setAttribute('aria-label', 'Copier la commande Git.');
 
       const btnIcon = document.createElement('i');
       btnIcon.className = 'fas fa-clipboard';
