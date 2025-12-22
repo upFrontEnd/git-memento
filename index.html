@@ -6,7 +6,8 @@
   <title>Git Memento</title>
   <meta name="description" content="Une sélection de commandes pour Git" />
   <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)" />
   <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png" />
@@ -16,25 +17,23 @@
 
   <!-- Perf: accélère le handshake vers le CDN (utile si tu gardes Font Awesome) -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link href="https://cdnjs.cloudflare.com" />
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
   />
 
   <script type="module" src="/src/js/main.js"></script>
 </head>
 
 <body>
-  <!-- A11Y: lien d’évitement (à styliser en “visually hidden” puis visible au focus) -->
   <a class="skip-link" href="#main-content">Aller au contenu</a>
 
   <div class="container">
     <header class="header">
-      <!-- Si le logo est purement décoratif (déjà redondant avec le titre),
-           le masquer aux lecteurs d’écran évite du bruit. -->
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="header__logo"
@@ -49,8 +48,6 @@
         git<span class="header__title-accent">Memento</span>
       </h1>
 
-      <!-- A11Y: aria-pressed reflète l’état du toggle (à gérer en JS).
-           aria-label ok, mais un aria-pressed apporte une info “on/off”. -->
       <button
         class="theme-toggle"
         type="button"
@@ -62,8 +59,7 @@
         <span class="visually-hidden">Changer le thème</span>
       </button>
     </header>
-
-    <!-- A11Y: cible du skip-link + focus programmatique possible -->
+    
     <main id="main-content" tabindex="-1"></main>
   </div>
 </body>
